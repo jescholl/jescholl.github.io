@@ -3,7 +3,7 @@ version: 2.0
 defaults: &defaults
   working_directory: /tmp/project
   docker:
-    - image: circleci/ruby:2.5.5
+    - image: cimg/ruby:2.5.5
       environment:
         BUNDLER_VERSION: 2.2.24
 
