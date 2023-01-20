@@ -3,9 +3,7 @@ version: 2.0
 defaults: &defaults
   working_directory: /tmp/project
   docker:
-    - image: cimg/ruby:2.5.5
-      environment:
-        BUNDLER_VERSION: 2.2.24
+    - image: cimg/ruby:2.6.6
 
 save_cache: &save_cache
   save_cache:
@@ -21,7 +19,12 @@ restore_cache: &restore_cache
 bundle: &bundle
   run:
     name: Install Gems
-    command: gem uninstall bundler --force; gem install bundler --force --version 2.2.24 && bundle install
+    command: >
+      gem uninstall bundler --force;
+      gem install bundler:2.2.24
+      && sudo apt update
+      && sudo apt install -y libv8-dev
+      && bundle install
 
 jobs:
   build:
@@ -62,7 +65,7 @@ jobs:
       - *bundle
       - run:
           name: Install Prerequisites
-          command: "apt-get update && apt-get install -y aspell"
+          command: sudo apt install -y aspell
       - run:
           name: Check Spelling
           command: bundle exec rake check:spelling
@@ -75,7 +78,7 @@ jobs:
       - *bundle
       - run:
           name: Install Prerequisites
-          command: "apt-get update; apt-get install -y rsync"
+          command: sudo apt install -y rsync
       - run:
           name: Avoid hosts unknown for github
           command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
