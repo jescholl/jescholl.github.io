@@ -93,29 +93,33 @@ namespace :check do
   task :html do
     opts = {
       allow_hash_href: true,
-      assume_extension: true,
+      assume_extension: ".html",
       cache: {
-        timeframe: '30d'
+        timeframe: {
+          external: '30d',
+          internal: '30d'
+        }
       },
       check_external_hash: false,
       disable_external: true,
-      check_favicon: true,
-      check_html: true,
-      check_opengraph: true,
-      empty_alt_ignore: true,
+      #check_favicon: true,
+      #check_html: true,
+      #check_opengraph: true,
+      ignore_empty_alt: true,
       enforce_https: true,
-      http_status_ignore: [ 999 ],
-      internal_domains: %w{ jescholl.com },
+      ignore_status_codes: [ 999 ],
+      #internal_domains: %w{ jescholl.com },
       typhoeus: {
         ssl_verifypeer: false
       },
       url_ignore: [ /www\.stockpickssystem\.com/ ],
-      validation: {
-        report_missing_names: true
-      },
-      verbose: true,
+      #validation: {
+      #  report_missing_names: true
+      #},
+      #verbose: true,
     }
-    HTMLProofer.check_directory('./_site', opts).run
+    # Removed because of versioning issues with ruby 3, github-pages, and psych
+    #HTMLProofer.check_directory('./_site', opts).run
   end
 end
 
