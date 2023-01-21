@@ -93,8 +93,6 @@ expenses        = buy_price + selling_costs + cost_of_renting
 profit          = (sell_price + monthly_mortgage*months) - (buy_price + selling_costs + monthly_rent*months - monthly_principal_paid*months)
 ```
 
-{% include base_path %}
-
 Based on my completely unscientific practice of randomly looking at different
 areas in Trulia, it seems like summer time generally accounts for almost all of
 the yearly growth, and the winter generally loses about 10-20% of what the
