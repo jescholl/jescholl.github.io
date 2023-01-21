@@ -132,6 +132,8 @@ exclude:
   - node_modules
   - package.json
   - Rakefile
+  - Dockerfile
+  - renovate.json
   - README
   - tmp
   - custom.en.pws
