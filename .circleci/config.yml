@@ -3,7 +3,7 @@ version: 2.0
 defaults: &defaults
   working_directory: /tmp/project
   docker:
-    - image: cimg/ruby:2.7.7
+    - image: cimg/ruby:2.7.8
 
 save_cache: &save_cache
   save_cache:
