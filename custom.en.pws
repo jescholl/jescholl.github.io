@@ -116,3 +116,11 @@ Fortigate
 QA
 grafana
 LLC
+kyverno
+karpenter
+EKS
+ECR
+CDE
+cloudformation
+pulumi
+backend
