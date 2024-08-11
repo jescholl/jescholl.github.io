@@ -256,7 +256,7 @@ defaults:
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "Jason Scholl"
-resume_title:                   "Operations Engineer"
+resume_title:                   "Site Reliability Engineer"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
