@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-theme                    : minimal-mistakes-jekyll
+remote_theme             : mmistakes/minimal-mistakes@4.26.2
 locale                   : "en-US"
 title                    : "JESCHOLL"
 title_separator          : "-"
@@ -180,11 +180,14 @@ timezone: America/Los_Angeles
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-assets
   - jekyll-sitemap
+  - jekyll-data
   - jekyll-gist
   - jekyll-feed
   - jemoji
+  - jekyll-github-metadata
+
+  - jekyll-include-cache
 
 # mimic GitHub Pages with --safe
 whitelist:

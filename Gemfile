@@ -1,16 +1,4 @@
 source "https://rubygems.org"
 
-gem "jekyll"
-gem "therubyracer"
-#gem "sprockets", "~> 3.7"
-gem "sprockets"
-gem "rake"
-#gem "jekyll-assets"
-gem "jekyll-assets", git: "https://github.com/envygeeks/jekyll-assets", ref: "056d2c88719ef3b1f90967a606dd1441581dd832"
-gem "uglifier"
-gem "minimal-mistakes-jekyll", "4.24.0"
-gem "github-pages", "231"
-gem "html-proofer"
-gem "rspec", "~> 3.3"
-# gem "jekyll-archives"
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-include-cache", group: :jekyll_plugins

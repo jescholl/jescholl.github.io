@@ -1,3 +1,4 @@
+{% assign cache_bust = '?v=' | append: site.github.build_revision %}
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
   {% endif %}
 
-  {% asset resume.css %}
+  <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url | append: cache_bust }}">
 
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 

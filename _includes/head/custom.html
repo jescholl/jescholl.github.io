@@ -1,10 +1,12 @@
 {% include head/favicon.html %}
+{% assign cache_bust = '?v=' | append: site.github.build_revision %}
 
 <!-- start custom head snippets -->
 
-{% asset custom.css %}
+ <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url | append: cache_bust }}">
 {% if page.graph %}
-  {% asset graph.js %}
+  <script src="{{ '/assets/js/graph/d3.v3.min.js' | relative_url | append: cache_bust }}"></script>
+  <script src="{{ '/assets/js/graph/function-plot.min.js' | relative_url | append: cache_bust }}"></script>
 {% endif %}
 
 <!-- end custom head snippets -->
