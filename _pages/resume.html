@@ -43,10 +43,6 @@ phone:
           {% include resume/icon-links.html %}
         </div>
 
-        <div class="executive-summary" itemprop="description">
-          <p>I am a fast learner looking for new challenges.  Currently I am experimenting with Kubernetes and Nomad and would love to find a company that would help me continue that journey.</p>
-        </div>
-
         {% if site.resume_looking_for_work == 'yes' %}
           <a class="no-print contact-button obfuscated" itemprop="email" coded="{{page.email.coded}}" key="{{page.email.key}}" href="#">Contact me</a>
         {% elsif site.resume_looking_for_work == 'no' %}
@@ -71,11 +67,12 @@ phone:
               <h4 class="resume-item-details">Automation</h4>
               <ul class="resume-item-list">
                 <li>CircleCi</li>
-                <li>Consul Service Discovery</li>
-                <li>Jenkins</li>
+                <li>Consul</li>
+                <li>Karpenter</li>
                 <li>Kubernetes</li>
+                <li>Kyverno</li>
                 <li>Nomad</li>
-                <li>Rundeck</li>
+                <li>Renovate</li>
               </ul>
             </div>
 
@@ -109,7 +106,6 @@ phone:
               <ul class="resume-item-list">
                 <li>Ansible</li>
                 <li>Chef</li>
-                <li>Consul-Template</li>
                 <li>Etch</li>
                 <li>Puppet</li>
                 <li>Terraform</li>
@@ -135,7 +131,7 @@ phone:
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name"><a href="https://www.meettally.com">Tally Technologies Inc.</a></h3>
           <h4 class="resume-item-details" itemprop="description">Staff Site Reliability Engineer &bull; Sep, 2021 &mdash; Aug, 2024</h4>
-          <p class="resume-item-copy">I have been primarily focused on taming the organic growth of our infrastructure; developing, documenting, and enforcing best practices to reduce barriers to growth, empower developers, and speed up SRE onboarding.  I have also helped mentor new and junior team members as the team grew from 4 to 15.
+          <p class="resume-item-copy">I was a driving force toward standardization and automation, reducing our tech footprint while working with security and developers to ensure that our IaC was secure-by-default, easy to use, and adaptable to new requirements.
           <p class="resume-item-copy">Key Achievements:</p>
           <ul class="resume-item-list">
             <li>Migrate infrastructure management from CloudFormation, Ansible, Puppet, and Pulumi to Terraform.</li>
@@ -153,7 +149,7 @@ phone:
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name"><a href="https://www.gemini.com">Gemini Trust Co, LLC.</a></h3>
           <h4 class="resume-item-details" itemprop="description">Lead Site Reliability Engineer &bull; Apr, 2019 &mdash; Sep, 2021</h4>
-          <p class="resume-item-copy">I have been primarily focused on taming the organic growth of our infrastructure; developing, documenting, and enforcing best practices to reduce barriers to growth, empower developers, and speed up SRE onboarding.  I have also helped mentor new and junior team members as the team grew from 4 to 15.
+          <p class="resume-item-copy">I was primarily focused on taming the organic growth of our infrastructure; developing, documenting, and enforcing best practices to reduce barriers to growth, empower developers, and speed up SRE onboarding.  I also helped mentor new and junior team members as the team grew from 4 to 15.
           <p class="resume-item-copy">Key Achievements:</p>
           <ul class="resume-item-list">
             <li>Migrate QA environments from the datacenter to AWS</li>
@@ -189,29 +185,9 @@ phone:
             <li>Automate deb and rpm package builds for multiple operating systems and architectures.</li>
             <li>Setup Amazon VPC and Direct Connect to begin gradual migration toward Amazon's EC2, RDS, Elasticache, and Redshift.</li>
             <li>Redesign network infrastructure, and replace firewalls to improve security and throughput.</li>
-            <li>Work with developers to secure applications and network during move from PCI4 to PCI3.</li>
             <li>Implement service discovery in Consul to ease service management and deployment.</li>
             <li>Design infrastructure in a self-service manner, granting developers easy control of settings without requiring knowledge of the infrastructure itself.
           </ul>
-        </div><!-- end of resume-item -->
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.clearesult.com/">Fluid Market Strategies</a> (<a href="https://www.roberthalf.com/technology">Robert Half Technologies</a>)</h3>
-          <h4 class="resume-item-details" itemprop="description">Network/Server Engineer &bull; Aug, 2012 &mdash; Sep, 2013</h4>
-          <p class="resume-item-copy">As the sole Network Engineer, I tore down and rebuilt the entire network and server infrastructure from the ground up while also providing day-to-day user support for roughly 120 users.  The reason for the rebuild was that the company had outgrown the Small Business Server deployment and many other networking components that didn't scale well with rapid growth the company experienced.</p>
-          <p class="resume-item-copy">Key Achievements:</p>
-          <ul class="resume-item-list">
-            <li>Rebuilt VM hosts running ESXi 3.5 and 4.0 and install ESXi 5.1 while maintaining approximately 25 live virtual machines.</li>
-            <li>Design and rebuild network layout to better fit the needs of the growing organization.</li>
-            <li>Redesign and rebuild the DMZ to achieve better security for publicly available servers and greater segregation from internal environment.</li>
-            <li>Update and modify 30 highly customized Joomla web sites to fit the changing needs of the business units.</li>
-          </ul>
-        </div><!-- end of resume-item -->
-
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name"><a href="https://www.cornellpump.com">Cornell Pump Company</a> (<a href="https://www.roberthalf.com/technology">Robert Half Technologies</a>)</h3>
-          <h4 class="resume-item-details" itemprop="description">IT Support &bull; Sep, 2010 &mdash; Sep, 2011</h4>
-          <p class="resume-item-copy">Through a part-time position, I was the sole on-sight provider of server, network, computer and phone system support to approximately 100 office and shop workers.  This position had previously been held by a number of off-site support companies and short-lived, part-time employees.</p>
         </div><!-- end of resume-item -->
 
       </section>
@@ -225,12 +201,6 @@ phone:
         <header class="section-header">
           <h2 id="projects">Projects</h2>
         </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title">Kubernetes</h3>
-          <h4 class="resume-item-details">Bare metal kubernetes cluster</h4>
-          <p class="resume-item-copy">There are lots of kubernetes projects out there, but the majority of them lean on various cloud services.  I was curious how kubernetes would work on bare metal, so I built a small cluster to teach myself about kubernetes and eventually power my blog and a few other home projects.
-        </div>
 
         <div class="resume-item">
           <h3 class="resume-item-title"><a href="https://github.com/jescholl/packetman">Packetman</a></h3>
@@ -264,7 +234,7 @@ phone:
 
         <div class="resume-item">
           <h3 class="resume-item-title"><a href="https://www.betagammasigma.org/">Beta Gama Sigma Honors Association</a></h3>
-          <h4 class="resume-item-details">Lifetime Member &bull; 2010</h4>
+          <h4 class="resume-item-details">Lifetime Member</h4>
         </div>
 
       </section>
@@ -281,7 +251,7 @@ phone:
 
         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
           <h3 class="resume-item-title" itemprop="name"><a href="https://www.pdx.edu">Portland State University</a></h3>
-          <h4 class="resume-item-details" itemprop="description">Bachelor of Science, Business Administration &bull; 2009 &mdash; 2012</h4>
+          <h4 class="resume-item-details" itemprop="description">Bachelor of Science, Business Administration</h4>
           <p class="resume-item-copy">Information Systems &bull; Cum Laude</p>
         </div>
 
