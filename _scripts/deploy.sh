@@ -9,7 +9,7 @@ DEPLOY_DIR=$(mktemp -d)
 SOURCE_REPO_URL=${SOURCE_REPO_URL:-${CIRCLE_REPOSITORY_URL:-$(git config --get remote.origin.url)}}
 SOURCE_REPO_BRANCH=${SOURCE_REPO_BRANCH:-${CIRCLE_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}}
 TARGET_REPO_URL=${TARGET_REPO_URL:-${CIRCLE_REPOSITORY_URL:-$SOURCE_REPO_URL}}
-TARGET_REPO_BRANCH=${TARGET_REPO_BRANCH:-"master"}
+TARGET_REPO_BRANCH=${TARGET_REPO_BRANCH:-"gh-pages-static"}
 
 CNAME=$(cat "CNAME")
 DOMAIN_NAME=${DOMAIN_NAME:-${CNAME:-$CIRCLE_PROJECT_REPO_NAME}}
@@ -47,7 +47,7 @@ if [[ "$TARGET_REPO_BRANCH" == "$SOURCE_REPO_BRANCH" && "$TARGET_REPO_URL" == "$
 fi
 
 if [[ "$SITEMAP_URL" == "https:///sitemap.xml" ]]; then
-  echo "Required variables not set" 
+  echo "Required variables not set"
   exit 2
 fi
 
@@ -69,7 +69,7 @@ rsync -a --delete --exclude=.git $BUILD_DIR/ .
 # commit changes
 git add -A
 git commit -m "$COMMIT_MESSAGE"
-git push origin master
+git push origin $TARGET_REPO_BRANCH
 
 #ping search engines with new sitemap
 curl "http://www.google.com/webmasters/sitemaps/ping?sitemap=$SITEMAP_URL"
