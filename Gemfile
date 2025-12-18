@@ -13,4 +13,4 @@ gem "github-pages", "231"
 gem "html-proofer"
 gem "rspec", "~> 3.3"
 # gem "jekyll-archives"
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem "wdm", "~> 0.2.0" if Gem.win_platform?
